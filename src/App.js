@@ -1,11 +1,15 @@
-
+import React from 'react'
 import './App.css';
+import SideMenu from './Components/SideMenu'
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <>
+      <SideMenu />
+      <div>
+        here we go
+      </div>
+    </>
   );
 }
 
