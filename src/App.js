@@ -1,13 +1,25 @@
-import React from 'react'
+import { makeStyles } from '@material-ui/core';
+import React from 'react';
 import './App.css';
-import SideMenu from './Components/SideMenu'
+import SideMenu from './Components/SideMenu';
+import Header from './Components/Header';
+
+
+const useStyles = makeStyles({
+  appMain: {
+    paddingLeft: '320px', 
+    width: '100%'
+  }
+})
 
 function App() {
+
+  const classes = useStyles(); 
   return (
     <>
       <SideMenu />
-      <div>
-        here we go
+      <div className={classes.appMain}>
+        <Header /> 
       </div>
     </>
   );
