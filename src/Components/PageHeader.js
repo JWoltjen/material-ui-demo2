@@ -1,5 +1,5 @@
 import React from 'react'
-import { Paper, Card } from '@material-ui/core'
+import { Paper, Card, Typography } from '@material-ui/core'
 
 function PageHeader(props) {
 
@@ -10,6 +10,18 @@ function PageHeader(props) {
                 <Card>
                     {icon}
                 </Card>
+                <div>
+                    <Typography 
+                    variant="h6"
+                    component='div'
+                    >{title}
+                    </Typography>
+                     <Typography 
+                    variant="subtitle2"
+                    component='div'
+                    >{subtitle}
+                    </Typography>
+                </div>
             </div>
         </Paper>
     )
