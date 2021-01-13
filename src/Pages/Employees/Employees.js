@@ -16,14 +16,14 @@ function Employees() {
 
     return (
         <>
-        <PageHeader 
-          title='New Employee'
-          subtitle="Form Design with Validation"
-          icon={<PeopleOutlineTwoToneIcon fontSize="large" />}
-        />
-        <Paper className={classes.pageContent}>
-            <EmployeeForm /> 
-        </Paper>
+            <PageHeader 
+            title='New Employee'
+            subtitle="Form Design with Validation"
+            icon={<PeopleOutlineTwoToneIcon fontSize="large" />}
+            />
+            <Paper className={classes.pageContent}>
+                <EmployeeForm /> 
+            </Paper>
         </>
     )
 }

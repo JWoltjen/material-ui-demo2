@@ -1,6 +1,5 @@
 import React from 'react'
 import { Paper, Card, Typography, makeStyles } from '@material-ui/core'
-import { FullscreenExit } from '@material-ui/icons';
 
 
 const useStyles = makeStyles(theme =>({

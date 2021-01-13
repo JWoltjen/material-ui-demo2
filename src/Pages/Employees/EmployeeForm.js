@@ -1,14 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Grid, TextField, makeStyles} from '@material-ui/core';
-
-const useStyles = makeStyles(theme => ({
-    root: {
-        '& .MuiFormControl-root': {
-            width: '80%',
-            margin: theme.spacing(1)
-        }
-    }
-}))
+import {useForm, Form} from '../../Components/useForm';
 
 const initialValues = {
     id: 0, 
@@ -17,43 +9,41 @@ const initialValues = {
     mobile: '',
     city: '', 
     gender: 'male', 
-    departmentId: '', 
+    departmentId: '',   
     hireDate: new Date(),
     isPermanent: false,
 }
 
-function EmployeeForm() {
+export default function EmployeeForm() {
 
-    const [values, setValues] = useState(initialValues)
-    const classes = useStyles(); 
-    const handleInputChange = e => {
-        const {name, value} = e.target
-        setValues({
-            ...values,
-          [name]: value  
-        })
-    }
+    const {
+        values,
+        setValues,
+        handleInputChange
+    } = useForm(initialValues); 
+
+  
     return (
-            <form className={classes.root}>
+            <useForm> 
                 <Grid container >
                     <Grid item xs={6}>
                         <TextField
                         variant="outlined"
-                        label="full name"
+                        label="Full Name"
                         name="fullName"
                         value={values.fullName}
                         onChange={handleInputChange}
                         />
                         <TextField
                         variant="outlined"
-                        label="email"
+                        label="Email"
+                        name="email"
                         value={values.email}
+                        onChange={handleInputChange}
                         />
                     </Grid>
                     <Grid item xs={6}></Grid>
                 </Grid>
-            </form>
+            </useForm>
     )
 }
-
-export default EmployeeForm
