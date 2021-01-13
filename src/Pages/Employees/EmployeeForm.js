@@ -26,6 +26,13 @@ function EmployeeForm() {
 
     const [values, setValues] = useState(initialValues)
     const classes = useStyles(); 
+    const handleInputChange = e => {
+        const {name, value} = e.target
+        setValues({
+            ...values,
+          [name]: value  
+        })
+    }
     return (
             <form className={classes.root}>
                 <Grid container >
@@ -33,7 +40,9 @@ function EmployeeForm() {
                         <TextField
                         variant="outlined"
                         label="full name"
+                        name="fullName"
                         value={values.fullName}
+                        onChange={handleInputChange}
                         />
                         <TextField
                         variant="outlined"
