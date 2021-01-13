@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Grid, TextField, makeStyles} from '@material-ui/core';
+import {Grid, TextField, makeStyles, FormControl, RadioGroup, FormControlLabel, Radio, FormLabel} from '@material-ui/core';
 import {useForm, Form} from '../../Components/useForm';
 
 const initialValues = {
@@ -42,7 +42,16 @@ export default function EmployeeForm() {
                         onChange={handleInputChange}
                         />
                     </Grid>
-                    <Grid item xs={6}></Grid>
+                    <Grid item xs={6}>
+                        <FormControl>
+                            <FormLabel>Gender</FormLabel>
+                                <RadioGroup>
+                                    <FormControlLabel value="male" control={<Radio/>} label="Male" /> 
+                                     <FormControlLabel value="female" control={<Radio/>} label="Female" /> 
+                                      <FormControlLabel value="other" control={<Radio/>} label="Other" /> 
+                                </RadioGroup>
+                        </FormControl>
+                    </Grid>
                 </Grid>
             </useForm>
     )
