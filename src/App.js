@@ -3,8 +3,7 @@ import React from 'react';
 import './App.css';
 import SideMenu from './Components/SideMenu';
 import Header from './Components/Header';
-import PageHeader from './Components/PageHeader';
-import PeopleOutlineTwoToneIcon from '@material-ui/icons/PeopleOutlineTwoTone'
+import Employees from './Pages/Employees/Employees'
 
 const theme = createMuiTheme({
   palette:{
@@ -18,6 +17,13 @@ const theme = createMuiTheme({
     }, 
     background: {
       default: '#f4f5fd'
+    }, 
+    overrides: {
+      MuiAppBar:{
+        root:{
+          transform: 'translateZ(0)'
+        }
+      }
     }
   }
 })
@@ -37,11 +43,8 @@ function App() {
       <SideMenu />
       <div className={classes.appMain}>
         <Header /> 
-        <PageHeader 
-          title='Page Header'
-          subtitle="Page Description"
-          icon={<PeopleOutlineTwoToneIcon />}
-        />
+        
+        <Employees /> 
       </div>
       <CssBaseline /> 
     </ThemeProvider>
