@@ -1,7 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import {Grid, TextField, makeStyles, FormControl, RadioGroup, FormControlLabel, Radio, FormLabel} from '@material-ui/core';
+import Controls from '../../Components/Controls/Controls'
 import {useForm, Form} from '../../Components/useForm';
-import Input from '../../Components/Controls/Input'
+
+
+const genderItems = [
+    {id: 'male', title: 'Male'}, 
+    {id: 'female', title: 'Female'},
+    {id: 'other', title: 'Other'}
+]
 
 const initialValues = {
     id: 0, 
@@ -28,13 +35,13 @@ export default function EmployeeForm() {
             <useForm> 
                 <Grid container >
                     <Grid item xs={6}>
-                       <Input  
+                       <Controls.input
                        name="fullName"
                        label="Full Name"
                        value={values.fullName}
                        onChange={handleInputChange}
                        />
-                        <Input
+                        <Controls.input
                         label="Email"
                         name="email"
                         value={values.email}
@@ -42,14 +49,13 @@ export default function EmployeeForm() {
                         />
                     </Grid>
                     <Grid item xs={6}>
-                        <FormControl>
-                            <FormLabel>Gender</FormLabel>
-                                <RadioGroup>
-                                    <FormControlLabel value="male" control={<Radio/>} label="Male" /> 
-                                     <FormControlLabel value="female" control={<Radio/>} label="Female" /> 
-                                      <FormControlLabel value="other" control={<Radio/>} label="Other" /> 
-                                </RadioGroup>
-                        </FormControl>
+                        <Controls.RadioGroup 
+                        name="gender"
+                        label="Gender"
+                        value={values.gender}
+                        onChange={handleInputChange}
+                        items={genderItems}
+                        />
                     </Grid>
                 </Grid>
             </useForm>
