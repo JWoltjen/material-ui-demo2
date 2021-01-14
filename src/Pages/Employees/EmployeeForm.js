@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Grid, TextField, makeStyles, FormControl, RadioGroup, FormControlLabel, Radio, FormLabel} from '@material-ui/core';
+import {Grid} from '@material-ui/core';
 import Controls from '../../Components/Controls/Controls'
 import {useForm, Form} from '../../Components/useForm';
 
@@ -35,13 +35,13 @@ export default function EmployeeForm() {
             <useForm> 
                 <Grid container >
                     <Grid item xs={6}>
-                       <Controls.input
+                       <Controls.Input
                        name="fullName"
                        label="Full Name"
                        value={values.fullName}
                        onChange={handleInputChange}
                        />
-                        <Controls.input
+                        <Controls.Input
                         label="Email"
                         name="email"
                         value={values.email}
