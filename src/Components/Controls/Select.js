@@ -21,7 +21,6 @@ export default function Select(props) {
                }
 
            </MuiSelect>
-        
        </FormControl>
     )
 }
